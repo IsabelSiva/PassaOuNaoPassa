@@ -1,9 +1,8 @@
-package com.example.passaounaopassa
+ package com.example.passaounaopassa
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +18,16 @@ class MainActivity : AppCompatActivity() {
             val falta = Integer.parseInt(faltas.text.toString())
             val media = (nota + not2)/2
 
-            if(media>=7){
-                result =
+            if(media >= 7 && falta <= 10){
+                result.setText("Aluno aprovado por média!" + "\n" + "Sua média: ${media}" +"\n" + "Número de faltas : ${falta}")
+            }else{
+                result.setText("Aluno reprovado por média!" + "\n" + "Sua média: ${media}" +"\n" + "Número de faltas : ${falta}")
             }
         }
     }
 }
+
+
+
+
+
