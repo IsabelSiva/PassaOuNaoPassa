@@ -1,5 +1,6 @@
  package com.example.passaounaopassa
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,8 +21,10 @@ class MainActivity : AppCompatActivity() {
 
             if(media >= 7 && falta <= 10){
                 result.setText("Aluno aprovado por média!" + "\n" + "Sua média: ${media}" +"\n" + "Número de faltas : ${falta}")
+                result.setTextColor(Color.GREEN)
             }else{
                 result.setText("Aluno reprovado por média!" + "\n" + "Sua média: ${media}" +"\n" + "Número de faltas : ${falta}")
+                result.setTextColor(Color.RED)
             }
         }
     }
