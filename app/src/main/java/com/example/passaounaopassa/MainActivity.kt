@@ -14,9 +14,12 @@ class MainActivity : AppCompatActivity() {
         val result = resultado
 
         botaoCalc.setOnClickListener{
-            val nota = Integer.parseInt(nota1.text.toString())
+           val nota = Integer.parseInt(nota1.text.toString())
+            //val stringOnTextFiel = nota1.text.toString()
+            //val nota = stringOnTextFiel.toIntOrNull()
             val not2 = Integer.parseInt(nota2.text.toString())
             val falta = Integer.parseInt(faltas.text.toString())
+            if (nota or not2 or falta == null) result.setText("Você precisa preencher os campos com valores válidos!")
             val media = (nota + not2)/2
 
             if(media >= 7 && falta <= 10){
